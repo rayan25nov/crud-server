@@ -4,7 +4,7 @@ var cors = require("cors");
 const app = express();
 
 //Using cors for cross origin resourse sharing
-app.use(cors());
+app.use(cors({ origin: "*" }));
 
 // Use body-parser middleware to parse request body
 app.use(bodyParser.json());
