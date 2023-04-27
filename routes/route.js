@@ -24,6 +24,7 @@ router.post("/", async (req, res) => {
     email: req.body.email,
     gender: req.body.gender,
     ip_address: req.body.ip_address,
+    country: req.body.country,
   });
 
   try {
@@ -59,7 +60,7 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
-
+// Get user Function to get the required user
 async function getUser(req, res, next) {
   let user;
 
