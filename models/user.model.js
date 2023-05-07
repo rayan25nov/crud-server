@@ -9,6 +9,6 @@ const userSchema = new mongoose.Schema({
   country: String,
 });
 
-const User = mongoose.model("User", userSchema);
+const Crud = mongoose.model("Crud", userSchema);
 
-module.exports = User;
+module.exports = Crud;

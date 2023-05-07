@@ -10,7 +10,13 @@ app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const userRoutes = require("../routes/route");
-app.use("/user", userRoutes);
+// All of the request [get, post, patch, delete] from routes folder
+const authRoutes = require("../routes/auth");
+// Routes for middleware
+app.use("/users", authRoutes);
+
+//Route for crud operation
+const dataRoutes = require("../routes/route");
+app.use("/data", dataRoutes);
 
 module.exports = app;
